@@ -3,6 +3,8 @@ function addition(a, b) {
 	var operation = '';
 	// Ne rien modifier au dessus de ce commentaire
 
+	operation = a+b;
+
 	// Ne rien modifier au dessous de ce commentaire
 	return operation;
 }
@@ -11,6 +13,8 @@ function addition(a, b) {
 function soustraction(a, b) {
 	var operation = '';
 	// Ne rien modifier au dessus de ce commentaire
+
+	operation = a-b;
 
 	// Ne rien modifier au dessous de ce commentaire
 	return operation;
@@ -21,6 +25,8 @@ function multiplication(a, b) {
 	var operation = '';
 	// Ne rien modifier au dessus de ce commentaire
 
+	operation = a*b;
+
 	// Ne rien modifier au dessous de ce commentaire
 	return operation;
 }
@@ -30,6 +36,8 @@ function division(a, b) {
 	var operation = '';
 	// Ne rien modifier au dessus de ce commentaire
 
+	operation = a/b;
+
 	// Ne rien modifier au dessous de ce commentaire
 	return operation;
 }
@@ -38,6 +46,8 @@ function division(a, b) {
 function division_reste(a, b) {
 	var operation = '';
 	// Ne rien modifier au dessus de ce commentaire
+
+	operation = a%b;
 	
 	// Ne rien modifier au dessous de ce commentaire
 	return operation;
@@ -48,6 +58,8 @@ function is_prime(a) {
 	var is = 1;
 	// Ne rien modifier au dessus de ce commentaire
 
+	
+
 	// Ne rien modifier au dessous de ce commentaire
 	return is;
 }
@@ -57,6 +69,18 @@ function is_even(a) {
 	var is = 1;
 	// Ne rien modifier au dessus de ce commentaire
 
+	if(typeof a == 'number'){
+		if (a%2 == 0) {
+			is = 1;
+		}
+		else { 
+			is = 0;
+		}
+	}
+	else {
+		is = -1;
+	}
+
 	// Ne rien modifier au dessous de ce commentaire
 	return is;
 }
@@ -65,6 +89,18 @@ function is_even(a) {
 function is_odd(a) {
 	var is = 1;
 	// Ne rien modifier au dessus de ce commentaire
+
+	if(typeof a == 'number'){
+		if (a%2 == 0) {
+			is = 0;
+		}
+		else { 
+			is = 1;
+		}
+	}
+	else {
+		is = -1;
+	}
 
 	// Ne rien modifier au dessous de ce commentaire
 	return is;
