@@ -46,6 +46,8 @@ function division(a, b) {
 function division_reste(a, b) {
 	var operation = '';
 	// Ne rien modifier au dessus de ce commentaire
+
+	operation = a%b;
 	
 	operation = a%b;
 
@@ -97,6 +99,18 @@ function is_even(a) {
 	var is = 1;
 	// Ne rien modifier au dessus de ce commentaire
 
+	if(typeof a == 'number'){
+		if (a%2 == 0) {
+			is = 1;
+		}
+		else { 
+			is = 0;
+		}
+	}
+	else {
+		is = -1;
+	}
+
 	// Ne rien modifier au dessous de ce commentaire
 	return is;
 }
@@ -106,9 +120,18 @@ function is_odd(a) {
 	var is = 1;
 	// Ne rien modifier au dessus de ce commentaire
 
-if (is_even(a)== O){
-	is = 1;
-}else if (is_even(a))
+	if(typeof a == 'number'){
+		if (a%2 == 0) {
+			is = 0;
+		}
+		else { 
+			is = 1;
+		}
+	}
+	else {
+		is = -1;
+	}
+
 	// Ne rien modifier au dessous de ce commentaire
 	return is;
 }
