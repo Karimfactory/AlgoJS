@@ -1,4 +1,4 @@
-#// Fonction pour additionner a et b
+// Fonction pour additionner a et b
 function addition(a, b) {
 	var operation = '';
 	// Ne rien modifier au dessus de ce commentaire
@@ -185,15 +185,11 @@ function river_next(river) {
 	 Exemple : 42 affiche 48 (42 + 4 + 2).
 */
 
-river = 42;
 sequence = river;
 var river_string = river.toString();
 for (var element of river_string){
-	parseInt(element);
-	sequence = sequence + element;
-	typeof(element);
+	sequence +=  parseInt(element);
 }
-
 	// Ne rien modifier au dessous de ce commentaire
 	return sequence;
 }
