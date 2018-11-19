@@ -3,7 +3,7 @@ function addition(a, b) {
 	var operation = '';
 	// Ne rien modifier au dessus de ce commentaire
 
-	operation = a+b;
+	operation = a + b;
 
 	// Ne rien modifier au dessous de ce commentaire
 	return operation;
@@ -14,7 +14,7 @@ function soustraction(a, b) {
 	var operation = '';
 	// Ne rien modifier au dessus de ce commentaire
 
-	operation = a-b;
+	operation = a - b;
 
 	// Ne rien modifier au dessous de ce commentaire
 	return operation;
@@ -25,7 +25,7 @@ function multiplication(a, b) {
 	var operation = '';
 	// Ne rien modifier au dessus de ce commentaire
 
-	operation = a*b;
+	operation = a * b;
 
 	// Ne rien modifier au dessous de ce commentaire
 	return operation;
@@ -36,7 +36,7 @@ function division(a, b) {
 	var operation = '';
 	// Ne rien modifier au dessus de ce commentaire
 
-	operation = a/b;
+	operation = a / b;
 
 	// Ne rien modifier au dessous de ce commentaire
 	return operation;
@@ -47,18 +47,38 @@ function division_reste(a, b) {
 	var operation = '';
 	// Ne rien modifier au dessus de ce commentaire
 
-	operation = a%b;
+	operation = a % b;
 	
 	// Ne rien modifier au dessous de ce commentaire
 	return operation;
 }
+/* (afficher les nombres premiers)
+for (var i = 0; i < 100; i++)
+{
+	if (is_prime(i) == 1) {
+		console.log(i + ' est premier.');
+	}
+} */
 
 // Fonction pour savoir si a est premier
 function is_prime(a) {
 	var is = 1;
 	// Ne rien modifier au dessus de ce commentaire
 
-	
+	if(typeof a == 'number'){
+		if(a == 0 || a == 1){
+			is = 0;
+		}
+		for(var i = 2; i < a; i++) {
+			if(a % i === 0){
+				is = 0;
+				break;
+			}
+		}
+	}
+	else {
+		is = -1;
+	}
 
 	// Ne rien modifier au dessous de ce commentaire
 	return is;
@@ -102,6 +122,17 @@ function is_odd(a) {
 		is = -1;
 	}
 
+	/* Variante en utilisant la fonction is_even:
+	is_even(a);
+	if(typeof a == 'number'){
+		if(is_even == 1){
+			is = 0;
+		}
+	else {
+		is = -1;
+	}
+	*/
+
 	// Ne rien modifier au dessous de ce commentaire
 	return is;
 }
@@ -110,13 +141,19 @@ function is_odd(a) {
 function river_next(river) {
 	var sequence = '';
 	// Ne rien modifier au dessus de ce commentaire
+	/*
+	Chaque séquence est la somme de la séquence précédente et des chiffres qui la compose.
+	La rivière 42 est la suite de séquences suivantes : 42 ; 48 ; 60 ; 66 ; 78 ; etc. 
+	Exemple : 42 affiche 48 (42 + 4 + 2).
+	*/
 
+	
 	// Ne rien modifier au dessous de ce commentaire
 	return sequence;
 }
 
 // Fonction pour obtenir la séquence précédente de sequence de la rivière de river
-function river_previous(river, sequence) {
+function river_previous(river, next) {
 	var sequence = '';
 	// Ne rien modifier au dessus de ce commentaire
 
