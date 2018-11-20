@@ -73,14 +73,13 @@ for (var i = 0; i < 100; i++)
 
 function is_prime(a) {
 	var is = 1;
-	var i = 2;
 	// Ne rien modifier au dessus de ce commentaire
 
-	if(typeof a == 'number'){
+/*	if(typeof a == 'number'){
 		if(a===1 || a === 0){
 			is = 0
 		}else{
-			while( i < Math.sqrt(a)) {
+			while( i < Math.sqrt(a)) { */
 	if(typeof a == 'number'){
 		if(a == 0 || a == 1){
 			is = 0;
@@ -95,7 +94,7 @@ function is_prime(a) {
 	else {
 		is = -1;
 	}
-
+/*
 				if(a % i === 0){
 					is = 0;
 					break;
@@ -108,7 +107,7 @@ function is_prime(a) {
 		}
 	}else{
 		is = -1;
-	}
+	} */
 
 
 	// Ne rien modifier au dessous de ce commentaire
@@ -185,11 +184,12 @@ function river_next(river) {
 	 Exemple : 42 affiche 48 (42 + 4 + 2).
 */
 
-sequence = river;
-var river_string = river.toString();
-for (var element of river_string){
-	sequence +=  parseInt(element);
-}
+	sequence = river;
+	var river_string = river.toString();
+	for (var element of river_string){
+		sequence += parseInt(element);
+	}
+
 	// Ne rien modifier au dessous de ce commentaire
 	return sequence;
 }
@@ -199,6 +199,13 @@ function river_previous(river, next) {
 	var sequence = '';
 	// Ne rien modifier au dessus de ce commentaire
 
+	while(sequence !== next){
+		var stock = sequence;
+		river_next(river);
+		break;
+	}
+
+	sequence = stock;
 	// Ne rien modifier au dessous de ce commentaire
 	return sequence;
 }
