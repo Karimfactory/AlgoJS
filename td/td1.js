@@ -73,14 +73,13 @@ for (var i = 0; i < 100; i++)
 
 function is_prime(a) {
 	var is = 1;
-	var i = 2;
 	// Ne rien modifier au dessus de ce commentaire
 
-	if(typeof a == 'number'){
+/*	if(typeof a == 'number'){
 		if(a===1 || a === 0){
 			is = 0
 		}else{
-			while( i < Math.sqrt(a)) {
+			while( i < Math.sqrt(a)) { */
 	if(typeof a == 'number'){
 		if(a == 0 || a == 1){
 			is = 0;
@@ -95,7 +94,7 @@ function is_prime(a) {
 	else {
 		is = -1;
 	}
-
+/*
 				if(a % i === 0){
 					is = 0;
 					break;
@@ -108,7 +107,7 @@ function is_prime(a) {
 		}
 	}else{
 		is = -1;
-	}
+	} */
 
 
 	// Ne rien modifier au dessous de ce commentaire
