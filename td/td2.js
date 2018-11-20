@@ -3,6 +3,10 @@ function chiffre_09() {
 	var sequence = '';
 	// Ne rien modifier au dessus de ce commentaire
 
+	for(i = 0; i < 10; i++){
+		sequence += i;
+	}
+
 	// Ne rien modifier au dessous de ce commentaire
 	return sequence;
 }
@@ -11,6 +15,9 @@ function chiffre_09() {
 function alphabet_az() {
 	var sequence = '';
 	// Ne rien modifier au dessus de ce commentaire
+
+	for(i=97,a='';i<123;)a+=String.fromCharCode(i++)
+	
 
 	// Ne rien modifier au dessous de ce commentaire
 	return sequence;

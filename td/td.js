@@ -175,7 +175,7 @@ function alphabet_AZ_test() {
 
 // Ne pas modifier cette fonction
 function alphabet_aZ_test() {
-	add('alphabet_aZ', 'aBcDeFgHiJkLmNoPqRsTuVwXyZ', alphabet_aZ().toString());
+	add('alphabet_aZ', 'none', 'aBcDeFgHiJkLmNoPqRsTuVwXyZ', alphabet_aZ().toString());
 }
 
 // Ne pas modifier cette fonction
