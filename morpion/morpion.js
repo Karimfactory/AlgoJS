@@ -120,9 +120,6 @@ function is_win(x, y) {
 		win = 'null';
 	}
 
-
-
-
 	// Ne rien modifier au dessous de ce commentaire
 	if (win == 'null') {
 		document.getElementById('infos').children[0].innerHTML = 'Match nul';
