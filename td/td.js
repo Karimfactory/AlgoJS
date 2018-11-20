@@ -17,6 +17,25 @@ function add(method, param, expected, resultat) {
 	document.getElementById('td').children[0].appendChild(element);
 }
 
+// Méthode pour gerer les évènements clavier.
+document.addEventListener('keydown', (event) => {
+	if (event.keyCode == 67) { // c
+		clean();
+	}
+	if (event.keyCode == 49) { // 1
+		td1_test();
+	}
+	if (event.keyCode == 50) { // 2
+		td2_test();
+	}
+});
+
+// Ne pas modifier cette fonction
+function all_test() {
+	td1_test();
+	td2_test();
+}
+
 // Ne pas modifier cette fonction
 function td1_test() {
 	addition_test();
@@ -115,4 +134,86 @@ function river_delimiter_test() {
 // Ne pas modifier cette fonction
 function river_unique_test() {
 	add('river_unique', '100', '1 ; 3 ; 5 ; 7 ; 9 ; 20 ; 31 ; 42 ; 53 ; 64 ; 75 ; 86 ; 97.', river_unique(100).toString());
+}
+
+// Ne pas modifier cette fonction
+function td2_test() {
+	chiffre_09_test();
+	alphabet_az_test();
+	alphabet_za_test();
+	alphabet_AZ_test();
+	alphabet_aZ_test();
+	suite_az_test();
+	transform_az_test();
+	transform_AZ_test();
+	position_az_test();
+	replace_az_test();
+	inverse_azAZ_test();
+	decompose_string_test();
+	pyramide_easy_test();
+}
+
+// Ne pas modifier cette fonction
+function chiffre_09_test() {
+	add('chiffre_09', 'none', '0123456789', chiffre_09().toString());
+}
+
+// Ne pas modifier cette fonction
+function alphabet_az_test() {
+	add('alphabet_az', 'none', 'abcdefghijklmnopqrstuvwxyz', alphabet_az().toString());
+}
+
+// Ne pas modifier cette fonction
+function alphabet_za_test() {
+	add('alphabet_za', 'none', 'zyxwvutsrqponmlkjihgfedcba', alphabet_za().toString());
+}
+
+// Ne pas modifier cette fonction
+function alphabet_AZ_test() {
+	add('alphabet_AZ', 'none', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', alphabet_AZ().toString());
+}
+
+// Ne pas modifier cette fonction
+function alphabet_aZ_test() {
+	add('alphabet_aZ', 'aBcDeFgHiJkLmNoPqRsTuVwXyZ', alphabet_aZ().toString());
+}
+
+// Ne pas modifier cette fonction
+function suite_az_test() {
+	add('suite_az', 'h', 'hijklmnopqrstuvwxyz', suite_az('h').toString());
+}
+
+// Ne pas modifier cette fonction
+function transform_az_test() {
+	add('transform_az', 'Je sUiS uN StrinG !', 'je suis un string !', transform_az('Je sUiS uN StrinG !').toString());
+}
+
+// Ne pas modifier cette fonction
+function transform_AZ_test() {
+	add('transform_AZ', 'Je sUiS uN StrinG !', 'JE SUIS UN STRING !', transform_AZ('Je sUiS uN StrinG !').toString());
+}
+
+// Ne pas modifier cette fonction
+function position_az_test() {
+	add('position_az', 'Je sUiS uN StrinG', '6', position_az('Je sUiS uN StrinG', 'S').toString());
+}
+
+// Ne pas modifier cette fonction
+function replace_az_test() {
+	add('replace_az', 'Je sUiS uN StrinG', 'Je sUS uN StrnG', replace_az('Je sUiS uN StrinG', 'i').toString());
+}
+
+// Ne pas modifier cette fonction
+function inverse_azAZ_test() {
+	add('inverse_azAZ', 'Je sUiS uN StrinG !', 'jE SuIs Un sTRINg !', inverse_azAZ('Je sUiS uN StrinG !').toString());
+}
+
+// Ne pas modifier cette fonction
+function decompose_string_test() {
+	add('decompose_string', 'Hello World !', '\nH\ne\nl\nl\no\n \nW\no\nr\nl\nd\n \n!', '\n' + decompose_string('Hello World !').toString());
+}
+
+// Ne pas modifier cette fonction
+function pyramide_easy_test() {
+	add('pyramide_easy', '3', '\n  /*\\\n /***\\\n/*****\\', '\n' + pyramide_easy(3).toString());
 }
