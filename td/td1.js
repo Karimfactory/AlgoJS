@@ -198,14 +198,10 @@ function river_next(river) {
 function river_previous(river, next) {
 	var sequence = '';
 	// Ne rien modifier au dessus de ce commentaire
-
-	while(sequence !== next){
-		var stock = sequence;
-		river_next(river);
-		break;
+	while(river !== next){
+		sequence = river;
+		river = river_next(river);
 	}
-
-	sequence = stock;
 	// Ne rien modifier au dessous de ce commentaire
 	return sequence;
 }
