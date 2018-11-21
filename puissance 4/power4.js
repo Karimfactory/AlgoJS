@@ -187,7 +187,8 @@ function is_win(x, y) {
 				count = 0;
 			}
 		}
-	} else {
+	} 
+	else {
 		win = power4[y][x];
 	}
 
