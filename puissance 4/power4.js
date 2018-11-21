@@ -161,6 +161,47 @@ function restart() {
 // Fonction de vérification de victoire
 function is_win(x, y) {
 	// Ne rien modifier au dessus de ce commentaire
+	var count = 0;
+
+	if(count<4){
+
+	// min = x - 3
+	while(x != 1 || a  < 3){
+		min -= 1; 
+		a += 1;
+	}
+
+	// max = x +3
+	while(x != 6 || a  < 3){
+		max += 1;
+		a += 1;
+	} 
+
+		for(i = a ; i < 6 ; i++){
+			if( (power4[y][i] == power4[y][i+1]) && (power4[y][x] != 0) && (power4[y][x] != undefined) ){
+				count += 1;
+			}
+			else{
+				count = 0;
+			}
+		}
+	} else {
+		win = power4[y][x];
+	}
+
+
+	/*
+if  (
+		( ( (y==5 && x<3) && (y==4 && x<2) && (y==3 && x<1) && (y==0 && x>3) && (y==1 && x>4) && (y==2 && x>5) ) == false )
+	)
+{
+	while(x!=0 || y!=0)
+	{
+		x -= 1,
+		y -= 1;
+	}
+}
+	*/
 
 	// Ne rien modifier au dessous de ce commentaire
 	if (win == 'null') {
