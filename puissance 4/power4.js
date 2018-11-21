@@ -165,17 +165,17 @@ function is_win(x, y) {
 
 	if(count<4){
 
-	// min = x - 3
-	while(x != 1 || a  < 3){
-		min -= 1; 
-		a += 1;
-	}
+		// min = x - 3
+		while(x != 1 || a  < 3){
+			xMin -= 1; 
+			a += 1;
+		}
 
-	// max = x +3
-	while(x != 6 || a  < 3){
-		max += 1;
-		a += 1;
-	} 
+		// max = x +3
+		while(x != 6 || a  < 3){
+			xMax += 1;
+			a += 1;
+		} 
 
 		for(i = min ; i < max ; i++){
 			if( (power4[y][i] == power4[y][i+1]) && (power4[y][x] != 0) && (power4[y][x] != undefined) ){
@@ -185,7 +185,8 @@ function is_win(x, y) {
 				count = 0;
 			}
 		}
-	} else {
+	} 
+	else {
 		win = power4[y][x];
 	}
 
