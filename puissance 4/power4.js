@@ -164,18 +164,20 @@ function is_win(x, y) {
 	var count = 0;
 
 	if(count<4){
+		var a = 0;
+		var xMin = x ;
+		var xMax = x ;
 
-	// min = x - 3
-	while(x != 1 || a  < 3){
-		xMin -= 1; 
-		a += 1;
-	}
-
-	// max = x +3
-	while(x != 6 || a  < 3){
-		xMax += 1;
-		a += 1;
-	} 
+		// xMin = x - 3
+		while(a  < 3){
+			if (xMin >= 0) {
+				xMin -= 1; 
+			}
+			if (xMax <= 6) {
+				xMin += 1; 
+			}
+			a += 1;
+		}
 
 		for(i = xMin ; i < xMax ; i++){
 			if( (power4[y][i] == power4[y][i+1]) && (power4[y][x] != 0) && (power4[y][x] != undefined) ){
