@@ -162,6 +162,12 @@ function restart() {
 function is_win(x, y) {
 	// Ne rien modifier au dessus de ce commentaire
 	var count = 0;
+	if(count < 4){
+		var a = 0;
+		var xMin = x;
+		var xMax = x;
+	}
+	
 
 	if(count<4){
 		var a = 0;
@@ -177,6 +183,7 @@ function is_win(x, y) {
 				xMin += 1; 
 			}
 			a += 1;
+			break;
 		}
 
 		for(i = xMin ; i < xMax ; i++){
