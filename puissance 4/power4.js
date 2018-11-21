@@ -177,7 +177,7 @@ function is_win(x, y) {
 		a += 1;
 	} 
 
-		for(i = a ; i < 6 ; i++){
+		for(i = min ; i < max ; i++){
 			if( (power4[y][i] == power4[y][i+1]) && (power4[y][x] != 0) && (power4[y][x] != undefined) ){
 				count += 1;
 			}
