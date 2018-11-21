@@ -152,17 +152,6 @@ function is_odd(a) {
 		is = -1;
 	}
 
-	/* Variante en utilisant la fonction is_even:
-	is_even(a);
-	if(typeof a == 'number'){
-		if(is_even == 1){
-			is = 0;
-		}
-	else {
-		is = -1;
-	}
-	*/
-
 	// Ne rien modifier au dessous de ce commentaire
 	return is;
 }
@@ -171,18 +160,6 @@ function is_odd(a) {
 function river_next(river) {
 	var sequence = '';
 	// Ne rien modifier au dessus de ce commentaire
-	/*
-	Chaque séquence est la somme de la séquence précédente et des chiffres qui la compose.
-	La rivière 42 est la suite de séquences suivantes : 42 ; 48 ; 60 ; 66 ; 78 ; etc. 
-	Exemple : 42 affiche 48 (42 + 4 + 2).
-	*/
-
-
-/*
-	 La rivière 42 est la suite de séquences suivantes :
-	 42 ; 48 ; 60 ; 66 ; 78 ; etc. 
-	 Exemple : 42 affiche 48 (42 + 4 + 2).
-*/
 
 	sequence = river;
 	var river_string = river.toString();
@@ -252,7 +229,7 @@ function river_delimiter(river, index_start, index_end) {
 }
 
 // Fonction pour obtenir les rivières uniques entre 1 et max
-function river_unique(river, max) {
+function river_unique(max) {
 	var rivers = '';
 	// Ne rien modifier au dessus de ce commentaire
 
