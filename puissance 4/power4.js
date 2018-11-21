@@ -148,6 +148,8 @@ function restart() {
 	win = false;
 	// Ne rien modifier au dessus de ce commentaire
 
+	var count = 0;
+
 	// Ne rien modifier au dessous de ce commentaire
 	for (var y = 0; y <= 5; y++) {
 		for (var x = 0; x <= 6; x++) {
@@ -162,49 +164,49 @@ function restart() {
 function is_win(x, y) {
 	// Ne rien modifier au dessus de ce commentaire
 	var count = 0;
+	console.log('x : '+ x + 'y : '+ y);
 
-	if(count<4){
+
+	if(count<3){
 		var a = 0;
 		var xMin = x ;
 		var xMax = x ;
 
 		// xMin = x - 3
-		while(a  < 3){
-			if (xMin >= 0) {
+		while(a < 3){
+			if (xMin > 0) {
 				xMin -= 1; 
 			}
-			if (xMax <= 6) {
-				xMin += 1; 
+			if (xMax < 6) {
+				xMax += 1; 
 			}
 			a += 1;
+
 		}
+		console.log('xMin :'+ xMin + 'xMax' + xMax);
 
 		for(i = xMin ; i < xMax ; i++){
-			if( (power4[y][i] == power4[y][i+1]) && (power4[y][x] != 0) && (power4[y][x] != undefined) ){
-				count += 1;
+			if 	(
+					(power4[y][i] == power4[y][i+1]) && 
+					( (power4[y][x] == 'R') || (power4[y][x] == 'J') )
+				){
+				count++ ;
+			console.log('ee');
+			console.log(i);
 			}
 			else{
 				count = 0;
 			}
+			
 		}
 	} 
 	else {
 		win = power4[y][x];
 	}
+	console.log('count: ' + count);
 
 
-	/*
-if  (
-		( ( (y==5 && x<3) && (y==4 && x<2) && (y==3 && x<1) && (y==0 && x>3) && (y==1 && x>4) && (y==2 && x>5) ) == false )
-	)
-{
-	while(x!=0 || y!=0)
-	{
-		x -= 1,
-		y -= 1;
-	}
-}
-	*/
+
 
 	// Ne rien modifier au dessous de ce commentaire
 	if (win == 'null') {
