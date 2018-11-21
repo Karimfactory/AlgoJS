@@ -167,17 +167,17 @@ function is_win(x, y) {
 
 	// min = x - 3
 	while(x != 1 || a  < 3){
-		min -= 1; 
+		xMin -= 1; 
 		a += 1;
 	}
 
 	// max = x +3
 	while(x != 6 || a  < 3){
-		max += 1;
+		xMax += 1;
 		a += 1;
 	} 
 
-		for(i = min ; i < max ; i++){
+		for(i = xMin ; i < xMax ; i++){
 			if( (power4[y][i] == power4[y][i+1]) && (power4[y][x] != 0) && (power4[y][x] != undefined) ){
 				count += 1;
 			}
