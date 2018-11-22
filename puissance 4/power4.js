@@ -164,50 +164,63 @@ function restart() {
 function is_win(x, y) {
 	// Ne rien modifier au dessus de ce commentaire
 	var count = 0;
-	console.log('x : '+ x + 'y : '+ y);
+	console.log('x : ' + x + ' - y : '+ y);
 
 
+function row_column(x,y){
 
 	var a = 0;
-	var xMin = x ;
-	var xMax = x ;
+	var Min = x ;
+	var Max = x ;
 
-	// xMin = x - 3
+	
+	// Min = x - 3
 	while(a < 3){
-		if (xMin > 0) {
-			xMin--; 
+		if (Min > 0) {
+			Min--; 
 			}
-		if (xMax < 6) {
-			xMax += 1; 
+		if (Max < 7) {
+			Max ++; 
 		}
 		a += 1;
 
 	}
 	
-	console.log('xMin :'+ xMin + ' xMax :' + xMax);
-		for(i = xMin ; i < xMax ; i++){
-		if (
-			(power4[y][i] == power4[y][i+1])
-			&& (power4[y][x] == 'R' || power4[y][x] == 'J')
-		){
-			count++ ;
-			console.log(i);
-			console.log('count: ' + count);
+	console.log('Min :'+ Min + ' Max :' + Max);
+
+		for(x = Min ; x <= Max ; x++){
+			if ((count<3) &&
+				(power4[y][x] == power4[y][x+1])
+				&& (power4[y][x] == 'R' || power4[y][x] == 'J')
+			){
+				count++ ;
+				console.log('x : ' + x);
+				console.log('count: ' + count);
+				console.log('x:'+x+' y:'+y)
+			}
+			else if(count >= 3) {
+				win = power4[y][x];
+				console.log('win:'+win);
+				switch(win) {
+					case 'J':
+						win = 'Jaune';
+						break;
+					case 'R':
+						win = 'Rouge';
+				}
+				console.log('win2:'+win);
+				break;
+			}
+			else{
+				count = 0;
+			}		
 		}
-		else if (count == 3) {
-			win = power4[y][x];
-			break;
-		}
-		else{
-			count = 0;
-		}
-		
-	}
-	
 	console.log('count: ' + count);
 	console.log('win: ' + win);
+	console.log('------------------');
+}
 
-
+row_column(x,y);
 
 
 	// Ne rien modifier au dessous de ce commentaire
