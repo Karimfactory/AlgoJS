@@ -173,7 +173,7 @@ function is_win(x, y) {
 	var xMax = x ;
 
 	// xMin = x - 3
-	while(a < 3){
+	/* while(a < 3){
 		if (xMin > 0) {
 			xMin--; 
 			}
@@ -182,28 +182,35 @@ function is_win(x, y) {
 		}
 		a += 1;
 
-	}
+	} */
 	
-	console.log('xMin :'+ xMin + ' xMax :' + xMax);
-		for(i = xMin ; i < xMax ; i++){
-		if (
-			(power4[y][i] == power4[y][i+1])
-			&& (power4[y][x] == 'R' || power4[y][x] == 'J')
-		){
-			count++ ;
-			console.log(i);
-			console.log('count: ' + count);
+	// console.log('xMin :'+ xMin + ' xMax :' + xMax);
+	function row_column(x, y) {
+		for(i = 0 ; i <= 6 ; i++){
+			if ((count<3) &&
+				(power4[y][i] == power4[y][i+1])
+				&& (power4[y][i] == 'R' || power4[y][i] == 'J')
+			){
+				count++ ;
+				console.log('i : ' + i);
+				console.log('count: ' + count);
+			}
+			else if (count >= 3) {
+				win = power4[y][x];
+				switch (win) {
+					case 'J':
+						win = 'Jaune';
+					case 'R':
+						win = 'Rouge';
+				}
+				break;
+			}
+			else{
+				count = 0;
+			}		
 		}
-		else if (count == 3) {
-			win = power4[y][x];
-			break;
-		}
-		else{
-			count = 0;
-		}
-		
 	}
-	
+	row_column(x, y);
 	console.log('count: ' + count);
 	console.log('win: ' + win);
 
