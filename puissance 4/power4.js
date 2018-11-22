@@ -167,43 +167,45 @@ function is_win(x, y) {
 	console.log('x : '+ x + 'y : '+ y);
 
 
-	if(count<3){
-		var a = 0;
-		var xMin = x ;
-		var xMax = x ;
 
-		// xMin = x - 3
-		while(a < 3){
-			if (xMin > 0) {
-				xMin -= 1; 
-			}
-			if (xMax < 6) {
-				xMax += 1; 
-			}
-			a += 1;
+	var a = 0;
+	var xMin = x ;
+	var xMax = x ;
 
+	// xMin = x - 3
+	while(a < 3){
+		if (xMin > 0) {
+			xMin--; 
+			}
+		if (xMax < 6) {
+			xMax += 1; 
 		}
-		console.log('xMin :'+ xMin + 'xMax' + xMax);
+		a += 1;
 
-		for(i = xMin ; i < xMax ; i++){
-			if 	(
-					(power4[y][i] == power4[y][i+1]) && 
-					( (power4[y][x] == 'R') || (power4[y][x] == 'J') )
-				){
-				count++ ;
-			console.log('ee');
-			console.log(i);
-			}
-			else{
-				count = 0;
-			}
-			
-		}
-	} 
-	else {
-		win = power4[y][x];
 	}
+	
+	console.log('xMin :'+ xMin + ' xMax :' + xMax);
+		for(i = xMin ; i < xMax ; i++){
+		if (
+			(power4[y][i] == power4[y][i+1])
+			&& (power4[y][x] == 'R' || power4[y][x] == 'J')
+		){
+			count++ ;
+			console.log(i);
+			console.log('count: ' + count);
+		}
+		else if (count == 3) {
+			win = power4[y][x];
+			break;
+		}
+		else{
+			count = 0;
+		}
+		
+	}
+	
 	console.log('count: ' + count);
+	console.log('win: ' + win);
 
 
 
