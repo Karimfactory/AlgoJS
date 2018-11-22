@@ -163,6 +163,7 @@ function restart() {
 // Fonction de vérification de victoire
 function is_win(x, y) {
 	// Ne rien modifier au dessus de ce commentaire
+
 	var count = 0;
 	console.log('x : ' + x + ' - y : '+ y);
 
@@ -231,4 +232,3 @@ row_column(x,y);
 		document.getElementById('infos').children[0].innerHTML = win + ' à gagné';
 	}
 }
-
