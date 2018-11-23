@@ -230,7 +230,8 @@ function play(x, y) {
 					console.log('a:' + a +' min:'+ min + ' iMax:' + iMax + ' jMax:' + jMax)
 					a++;
 				}
-*/				if(y == 0){
+*/	
+				if(y == 0){
 					for(i = (x-1); i <= (x+1); i++){
 						for(j = y; j <= (y+1); j++){
 							if(minesweeper[j][i] == 'M'){
@@ -263,12 +264,15 @@ function play(x, y) {
 				else{
 					minesweeper[y][x] = count;
 				}
-				if(minesweeper[y][x] = 'E'){
+					dessinerNbMine(x,y);
+
+
+		/*		if(minesweeper[y][x] = 'E'){
 					dessinerCaseVide(x,y);
 				}
 				else{
 					dessinerNbMine(x,y);
-				}
+				} */
 				// Ne rien modifier au dessous de ce commentaire
 			}
 		}
@@ -285,14 +289,52 @@ function completerGrille() {
 	var k = 0;
 	var l = 0;
 
+	if(y == 0){
+		for(i = (x-1); i <= (x+1); i++){
+			for(j = y; j <= (y+1); j++){
+				if(minesweeper[j][i] == 'M'){
+					count++;
+				}	
+			}
+		}
+	}
+	
+	else if(y == 9){
+		for(i = (x-1); i <= (x+1); i++){
+			for(j = (y-1); j <= y; j++){
+				if(minesweeper[j][i] == 'M'){
+					count++;
+				}	
+			}
+		}
+	}
+
+	else{
+		for(i = (x-1); i <= (x+1); i++){
+			for(j = (y-1); j <= (y+1); j++){
+				if(minesweeper[j][i] == 'M'){
+					count++;
+				}
+			}
+		}
+	}
+	
+	if(count == 0){
+		minesweeper[y][x] = 'E';
+	}
+	else{
+		minesweeper[y][x] = count;
+	}
+	dessinerNbMine(x,y);
+/*
 	for(x = 0; x <= 15; x++){
 		for(y = 0; y <= 9; y++){
 			if(minesweeper[y][x] != 'M'){
 
 				switch(y){
 					case 0:
-						for(k = (x-1); k <= (x+1); x++){
-							for(l = y; l <= (y+1); y++){
+						for(k = (x-1); k <= (x+1); k++){
+							for(l = y; l <= (y+1); l++){
 								if(minesweeper[y][x] == 'M'){
 									count++;
 								}
@@ -301,8 +343,8 @@ function completerGrille() {
 						}
 
 					case 9:
-						for(k = (x-1); k <= (x+1); x++){
-							for(l = (y-1); l <= y; y++){
+						for(k = (x-1); k <= (x+1); k++){
+							for(l = (y-1); l <= y; l++){
 								if(minesweeper[y][x] == 'M'){
 									count++;
 								}
@@ -311,8 +353,8 @@ function completerGrille() {
 						}
 
 					default:
-						for(k = (x-1); k <= (x+1); x++){
-							for(l = (y-1); l <= (y-1); y++){
+						for(k = (x-1); k <= (x+1); k++){
+							for(l = (y-1); l <= (y-1); l++){
 								if(minesweeper[y][x] == 'M'){
 									count++;
 								}
@@ -328,17 +370,20 @@ function completerGrille() {
 				else{
 					minesweeper[y][x] = count;
 				}
-				if(minesweeper[y][x] = 'E'){
+			
+				dessinerNbMine(x,y);
+
+			/*	if(minesweeper[y][x] = 'E'){
 					dessinerCaseVide(x,y);
 				}
 				else{
 					dessinerNbMine(x,y);
 				}
-
+			*
 			}
 		}
 	}
-
+*/
 	// Ne rien modifier au dessous de ce commentaire
 	dessinerGrille();
 }
