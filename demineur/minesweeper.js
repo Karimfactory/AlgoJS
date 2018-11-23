@@ -325,6 +325,34 @@ function completerGrille() {
 function is_win() {
 	// Ne rien modifier au dessus de ce commentaire
 
+	var winCount = 0;
+	/*	for(x = 0; x <= 15; x++){
+			for(y = 0; y <= 9; y++){
+				if
+				(
+					(minesweeper[y][x] === 1) ||
+					(minesweeper[y][x] === 2) ||
+					(minesweeper[y][x] === 3) ||
+					(minesweeper[y][x] === 4) ||
+					(minesweeper[y][x] === 5) ||
+					(minesweeper[y][x] === 6) ||
+					(minesweeper[y][x] === 7) ||
+					(minesweeper[y][x] === 8) ||
+					(minesweeper[y][x] === 'E')||
+					(minesweeper[y][x] === 'M')
+				)
+
+					winCount ++;
+					console.log('win:'+win);
+					console.log('x:'+x+' y:'+y);
+				}
+			}
+			if (winCount === 0) {
+				win = true;
+			}	
+		}
+
+	*/	
 	// Ne rien modifier au dessous de ce commentaire
 	if (win == 'mine') {
 		verify();
