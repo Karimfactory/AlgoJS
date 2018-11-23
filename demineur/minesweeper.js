@@ -230,16 +230,39 @@ function play(x, y) {
 					console.log('a:' + a +' min:'+ min + ' iMax:' + iMax + ' jMax:' + jMax)
 					a++;
 				}
-*/
-				for(i = (x-1); i <= (x+1); i++){
-					for(j = (y-1); j <= (y+1); j++){
-						if(minesweeper[j][i] == 'M'){
-						count++;
-						console.log('j:' + j+' i:'+ i)
-						}	
+*/				if(y == 0){
+					for(i = (x-1); i <= (x+1); i++){
+						for(j = y; j <= (y+1); j++){
+							if(minesweeper[j][i] == 'M'){
+							count++;
+							}	
+						}
 					}
 				}
-				minesweeper[y][x] = count;
+				else if(y == 9){
+					for(i = (x-1); i <= (x+1); i++){
+						for(j = (y-1); j <= y; j++){
+							if(minesweeper[j][i] == 'M'){
+							count++;
+							}	
+						}
+					}
+				}
+				else{
+					for(i = (x-1); i <= (x+1); i++){
+						for(j = (y-1); j <= (y+1); j++){
+							if(minesweeper[j][i] == 'M'){
+							count++;
+							}
+						}
+					}
+				}
+				if(count == 0){
+					minesweeper[y][x] = 'E';
+				}
+				else{
+					minesweeper[y][x] = count;
+				}
 				dessinerNbMine(x,y);
 				// Ne rien modifier au dessous de ce commentaire
 			}
@@ -251,13 +274,13 @@ function play(x, y) {
 // Fonction pour completer automatiquement la grille
 function completerGrille() {
 	// Ne rien modifier au dessus de ce commentaire
-
-	for(i=0;i<=15;i++){
-		for(j=0;j<=9;j++){
+	var count = 0;
+	for(var i=0;i<=15;i++){
+		for(var j=0;j<=9;j++){
 			if(minesweeper[i][j]!='M'){
-				for(i = (x-1); i <= (x+1); i++){
-					for(j = (y-1); j <= (y+1); j++){
-						if(minesweeper[j][i] == 'M'){
+				for(var k = (i-1); k <= (i+1); k++){
+					for(var l = (j-1); l <= (j+1); l++){
+						if(minesweeper[k][l] == 'M'){
 							count++;
 							console.log('j:' + j+' i:'+ i)
 							}	
