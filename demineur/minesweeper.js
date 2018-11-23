@@ -275,17 +275,54 @@ function play(x, y) {
 function completerGrille() {
 	// Ne rien modifier au dessus de ce commentaire
 	var count = 0;
-	for(var i=0;i<=15;i++){
-		for(var j=0;j<=9;j++){
+	var i = 0;
+	var j = 0;
+	var k = 0;
+	var l = 0;
+
+	for( i=0;i<=15;i++){
+		for( j=0;j<=9;j++){
 			if(minesweeper[i][j]!='M'){
-				for(var k = (i-1); k <= (i+1); k++){
-					for(var l = (j-1); l <= (j+1); l++){
-						if(minesweeper[k][l] == 'M'){
-							count++;
-							console.log('j:' + j+' i:'+ i)
-							}	
+
+				switch(j){
+					case 0:
+						for(k = (i-1); k <= (i+1); i++){
+							for(l = j; l <= (j+1); j++){
+								if(minesweeper[j][i] == 'M'){
+									count++;
+								}
+							}
 						}
-					}
+
+					case 9:
+						for(k = (i-1); k <= (i+1); i++){
+							for(l = (j-1); l <= j; j++){
+								if(minesweeper[j][i] == 'M'){
+									count++;
+								}
+							}
+						}
+
+					default:
+						for(k = (i-1); k <= (i+1); i++){
+							for(l = (j-1); l <= (j-1); j++){
+								if(minesweeper[j][i] == 'M'){
+									count++;
+								}
+							}
+
+						}
+
+				if(count == 0){
+					minesweeper[j][i] = 'E';
+				}
+				else{
+					minesweeper[j][i] = count;
+				}
+
+				dessinerNbMine(i,j);
+
+				}
 
 			}
 		}
