@@ -1,0 +1,60 @@
+1 note pour chaque étudiant du groupe dont vous même
+1 note global pour le groupe
+
+(x,x,x) = (travail d'équipe, bienveillance, motivation).
+
+Note pour Benjamin:
+
+Benjamin:(2,2,2), Melec:(2,2,2),Karim: (2,2,2), Leo:(2,2,2).
+
+Note pour Melec:
+
+Benjamin:(2,2,2), Melec:(2,2,2),Karim: (2,2,2), Leo:(2,2,2).
+
+Note pour Karim:
+
+Benjamin:(2,2,2), Melec:(2,2,2),Karim: (1,2,1), Leo:(2,2,2).
+
+Note pour Leo:
+
+Benjamin:(2,2,2), Melec:(1.5,2,2),Karim: (1,2,1), Leo:(2,2,1.5).
+
+Note du groupe:
+
+Travail d'équipe : 1.5
+Bienveillant : 1.5
+Motivation : 2
+
+--------------------------------------|
+
+Travail d'équipe (0; 0,5; 1; 1,5; 2) : 
+Communication, cohésion et partage
+
+Bienveillant (0; 0,5; 1; 1,5; 2) :
+Aimable, sociable, indulgente
+
+Motivation (0; 0,5; 1; 1,5; 2) :
+Motiver, persévérance, sérieux
+
+--------------------------------------|
+
+Question de groupe :
+
+Qu'elles ont été les difficultés principales ?
+
+	Trop peu de cours.
+
+Quel a été le ressenti global de la semaine ?
+
+	Semaine très épuisante mais aussi très intéressante.
+
+À combien de pourcentage estimez vous avoir progresser en Algo ?
+
+	On ne connait pas l'équivalent de 100% donc c'est dur à dire. On pense avoir quand 	même pas mal progressé.
+
+Avez vous des remarques ou des questions à dire sur la semaine ou sur l'Algo ?
+
+	Super cool les TD pour apprendre et approfondir. Semaine trop courte pour tout 		assimiler. Des exemples plus exhaustifs	aurait été plus utile dans le cours.
+
+studio@angamara.fr
+
