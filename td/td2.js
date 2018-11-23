@@ -17,7 +17,6 @@ function alphabet_az() {
 	// Ne rien modifier au dessus de ce commentaire
 
 	for(i=97,a='';i<123;)a+=String.fromCharCode(i++)
-	
 
 	// Ne rien modifier au dessous de ce commentaire
 	return sequence;
