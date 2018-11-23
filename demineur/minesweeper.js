@@ -263,7 +263,12 @@ function play(x, y) {
 				else{
 					minesweeper[y][x] = count;
 				}
-				dessinerNbMine(x,y);
+				if(minesweeper[y][x] = 'E'){
+					dessinerCaseVide(x,y);
+				}
+				else{
+					dessinerNbMine(x,y);
+				}
 				// Ne rien modifier au dessous de ce commentaire
 			}
 		}
@@ -275,53 +280,59 @@ function play(x, y) {
 function completerGrille() {
 	// Ne rien modifier au dessus de ce commentaire
 	var count = 0;
-	var i = 0;
-	var j = 0;
+	var x = 0;
+	var y = 0;
 	var k = 0;
 	var l = 0;
 
-	for( i=0;i<=15;i++){
-		for( j=0;j<=9;j++){
-			if(minesweeper[i][j]!='M'){
+	for(x = 0; x <= 15; x++){
+		for(y = 0; y <= 9; y++){
+			if(minesweeper[y][x] != 'M'){
 
-				switch(j){
+				switch(y){
 					case 0:
-						for(k = (i-1); k <= (i+1); i++){
-							for(l = j; l <= (j+1); j++){
-								if(minesweeper[j][i] == 'M'){
+						for(k = (x-1); k <= (x+1); x++){
+							for(l = y; l <= (y+1); y++){
+								if(minesweeper[y][x] == 'M'){
 									count++;
 								}
 							}
+							break;
 						}
 
 					case 9:
-						for(k = (i-1); k <= (i+1); i++){
-							for(l = (j-1); l <= j; j++){
-								if(minesweeper[j][i] == 'M'){
+						for(k = (x-1); k <= (x+1); x++){
+							for(l = (y-1); l <= y; y++){
+								if(minesweeper[y][x] == 'M'){
 									count++;
 								}
 							}
+							break;
 						}
 
 					default:
-						for(k = (i-1); k <= (i+1); i++){
-							for(l = (j-1); l <= (j-1); j++){
-								if(minesweeper[j][i] == 'M'){
+						for(k = (x-1); k <= (x+1); x++){
+							for(l = (y-1); l <= (y-1); y++){
+								if(minesweeper[y][x] == 'M'){
 									count++;
 								}
 							}
 
 						}
 
+				}
+
 				if(count == 0){
-					minesweeper[j][i] = 'E';
+					minesweeper[y][x] = 'E';
 				}
 				else{
-					minesweeper[j][i] = count;
+					minesweeper[y][x] = count;
 				}
-
-				dessinerNbMine(i,j);
-
+				if(minesweeper[y][x] = 'E'){
+					dessinerCaseVide(x,y);
+				}
+				else{
+					dessinerNbMine(x,y);
 				}
 
 			}
